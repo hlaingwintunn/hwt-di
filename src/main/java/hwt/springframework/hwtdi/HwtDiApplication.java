@@ -1,9 +1,6 @@
 package hwt.springframework.hwtdi;
 
-import hwt.springframework.hwtdi.controllers.ConstructorInjectedController;
-import hwt.springframework.hwtdi.controllers.MyController;
-import hwt.springframework.hwtdi.controllers.PropertyInjectedController;
-import hwt.springframework.hwtdi.controllers.SetterInjectedController;
+import hwt.springframework.hwtdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -16,6 +13,9 @@ public class HwtDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(HwtDiApplication.class, args);
+
+		I18NController i18NController = (I18NController) ctx.getBean("i18NController");
+		System.out.println(i18NController.sayHello());
 
 		MyController myController = (MyController) ctx.getBean("myController");
 		System.out.println("---------Primary---------");
