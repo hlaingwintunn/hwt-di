@@ -1,6 +1,7 @@
 package hwt.springframework.hwtdi;
 
 import hwt.springframework.hwtdi.controllers.*;
+import hwt.springframework.hwtdi.examplebean.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -16,10 +17,14 @@ public class HwtDiApplication {
 
 		MyController controller = (MyController) ctx.getBean("myController");
 
-		System.out.println(controller.sayHello());
-		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
-		System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());
-		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
+		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+
+		System.out.println(fakeDataSource.getUsername());
+
+//		System.out.println(controller.sayHello());
+//		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
+//		System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());
+//		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
 
 //		I18NController i18NController = (I18NController) ctx.getBean("i18NController");
 //		System.out.println(i18NController.sayHello());
