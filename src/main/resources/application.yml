@@ -3,3 +3,10 @@ guru:
     username: JMS UserName
     password: TestJMSPassword
     dburl: ww.jms.com.guru
+
+---
+spring:
+  profiles: de
+guru:
+  jms:
+    username: JMS Username $$$$$$ German
