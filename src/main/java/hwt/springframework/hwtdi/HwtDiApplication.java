@@ -2,6 +2,7 @@ package hwt.springframework.hwtdi;
 
 import hwt.springframework.hwtdi.controllers.*;
 import hwt.springframework.hwtdi.examplebean.FakeDataSource;
+import hwt.springframework.hwtdi.examplebean.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -20,6 +21,10 @@ public class HwtDiApplication {
 		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
 
 		System.out.println(fakeDataSource.getUsername());
+
+		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+
+		System.out.println(fakeJmsBroker.getUsername());
 
 //		System.out.println(controller.sayHello());
 //		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
